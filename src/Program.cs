@@ -58,6 +58,10 @@ namespace Creator
             {
                 await CheckObjectsAsync();
             }
+            else if (s_cmdLine.Action == CommandAction.ListTeams)
+            {
+                await ListOrganizationTeamsAsync();
+            }
         }
 
         private static async Task CheckObjectsAsync()
@@ -208,6 +212,11 @@ namespace Creator
         {
             await CreateObjectsAsync(async (repo, milestone) => await s_gitHub.CreateOrUpdateMilestoneAsync(repo, milestone),
                 async (repo, label) => await s_gitHub.CreateOrUpdateLabelAsync(repo, label));
+        }
+
+        private static async Task ListOrganizationTeamsAsync()
+        {
+            // TODO: Do stuff!
         }
     }
 }

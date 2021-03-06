@@ -31,6 +31,14 @@ namespace Creator
         [ArgumentGroup(nameof(CommandAction.CreateOrUpdate))]
         [RequiredArgument(1, "repos", "The list of repositories where to add the milestones to. The format is: owner\\repoName", true)]
         public List<string> Repositories { get; set; }
+
+        [ArgumentGroup(nameof(CommandAction.ListTeams))]
+        [RequiredArgument(0,"org", "The organization on GitHub to list teams from.")]
+        public string Org {get;set;}
+        
+        [ArgumentGroup(nameof(CommandAction.ListTeams))]
+        [OptionalArgument("azure-sdk","prefix", "The prefix to filter the team names by (rather than listing all teams in the organization)")]
+        public string Prefix{get;set;}
     }
 }
 

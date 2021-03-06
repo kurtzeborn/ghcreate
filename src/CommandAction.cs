@@ -5,6 +5,7 @@
         Create,
         CreateOrUpdate,
         List,
+        ListTeams,
         Check
     }
 }
